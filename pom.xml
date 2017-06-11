@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hibegin</groupId>
     <artifactId>simplewebserver-cli</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <url>http://github.com/hibegin/simplewebserver-cli</url>
 
@@ -27,7 +27,7 @@
         <connection>scm:git:git@github.com:hibegin/simplewebserver-cli.git</connection>
         <developerConnection>scm:git:git@github.com:hibegin/simplewebserver-cli.git</developerConnection>
         <url>git@github.com:hibegin/simplewebserver-cli.git</url>
-        <tag>HEAD</tag>
+        <tag>simplewebserver-cli-0.0.2</tag>
     </scm>
     <issueManagement>
         <system>Github Issue</system>

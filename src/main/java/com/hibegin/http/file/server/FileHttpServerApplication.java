@@ -8,7 +8,7 @@ import java.io.File;
 
 public class FileHttpServerApplication {
 
-    private static final String version = "0.0.2";
+    private static final String version = "0.0.4";
     private static final int DEFAULT_PORT = 7080;
 
     public static CommandLine cmd;

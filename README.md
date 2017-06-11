@@ -6,4 +6,4 @@
 
 ## Download
 
-http://central.maven.org/maven2/com/hibegin/simplewebserver-cli/0.0.4//home/xiaochun/git/simplewebserver-cli/target/simplewebserver-cli-0.0.4-jar-with-dependencies.jar
+http://central.maven.org/maven2/com/hibegin/simplewebserver-cli/0.0.4/simplewebserver-cli-0.0.4-jar-with-dependencies.jar

@@ -8,7 +8,7 @@ import java.io.File;
 
 public class FileHttpServerApplication {
 
-    private static final String version = "0.0.1";
+    private static final String version = "0.0.2";
     private static final int DEFAULT_PORT = 7080;
 
     public static CommandLine cmd;
@@ -32,7 +32,7 @@ public class FileHttpServerApplication {
             }
             if (cmd.hasOption("path")) {
                 if (new File(cmd.getOptionValue("path")).isFile() || !new File(cmd.getOptionValue("path")).exists()) {
-                    System.err.println("-f arg need is exists folder");
+                    System.err.println("-path arg need is exists folder");
                     return;
                 }
             }

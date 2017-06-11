@@ -15,7 +15,7 @@
         <freemarker.version>2.3.23</freemarker.version>
         <flexjson.version>3.3</flexjson.version>
         <java.version>1.7</java.version>
-        <simplewerserver.version>0.1.15</simplewerserver.version>
+        <simplewerserver.version>0.1.16</simplewerserver.version>
     </properties>
     <developers>
         <developer>
@@ -99,21 +99,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.7</version>
-                <executions>
-                    <execution>
-                        <id>deploy-executable</id>
-                        <goals>
-                            <goal>deploy-file</goal>
-                        </goals>
-                        <configuration>
-                            <file>target/simplewebserver-cli.jar</file>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
                 <version>1.6.7</version>
@@ -148,6 +133,7 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
+                            <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
                                     <mainClass>com.hibegin.http.file.server.FileHttpServerApplication</mainClass>

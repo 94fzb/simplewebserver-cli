@@ -1,15 +1,44 @@
 package com.hibegin.http.file.server;
 
+import com.hibegin.common.util.LoggerUtil;
 import com.hibegin.http.file.config.FileServerConfig;
 import com.hibegin.http.server.WebServerBuilder;
 import org.apache.commons.cli.*;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FileHttpServerApplication {
 
-    private static final String version = "0.0.1";
+    private static final Logger LOGGER = LoggerUtil.getLogger(FileHttpServerApplication.class);
+
+    private static String version;
     private static final int DEFAULT_PORT = 7080;
+    private static final Properties properties = new Properties();
+
+    static {
+        InputStream inputStream = FileHttpServerApplication.class.getResourceAsStream("/META-INF/maven/com.hibegin/simplewebserver-cli/pom.properties");
+        if (inputStream != null) {
+            try {
+                properties.load(inputStream);
+                version = properties.getProperty("version");
+            } catch (IOException e) {
+                LOGGER.log(Level.SEVERE, "", e);
+            } finally {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    LOGGER.log(Level.SEVERE, "", e);
+                }
+            }
+        } else {
+            version = "0.1.x-dev";
+        }
+    }
 
     public static CommandLine cmd;
 
@@ -27,12 +56,12 @@ public class FileHttpServerApplication {
                 return;
             }
             if (cmd.hasOption("version")) {
-                System.out.println("simplewebserver-cli version " + version);
+                System.out.println(properties.getProperty("artifactId") + " version " + version);
                 return;
             }
             if (cmd.hasOption("path")) {
                 if (new File(cmd.getOptionValue("path")).isFile() || !new File(cmd.getOptionValue("path")).exists()) {
-                    System.err.println("-f arg need is exists folder");
+                    System.err.println("-path arg need is exists folder");
                     return;
                 }
             }
@@ -65,7 +94,7 @@ public class FileHttpServerApplication {
         helpOption.setRequired(false);
         options.addOption(helpOption);
 
-        Option versionOption = new Option("v", "version", false, "print simplewebserver-cli version");
+        Option versionOption = new Option("v", "version", false, "print " + properties.getProperty("artifactId") + " version");
         versionOption.setRequired(false);
         options.addOption(versionOption);
 

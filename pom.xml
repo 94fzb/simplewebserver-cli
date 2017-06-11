@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.hibegin</groupId>
     <artifactId>simplewebserver-cli</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.5-SNAPSHOT</version>
     <packaging>jar</packaging>
     <url>http://github.com/hibegin/simplewebserver-cli</url>
 
@@ -15,7 +15,7 @@
         <freemarker.version>2.3.23</freemarker.version>
         <flexjson.version>3.3</flexjson.version>
         <java.version>1.7</java.version>
-        <simplewerserver.version>0.1.15</simplewerserver.version>
+        <simplewerserver.version>0.1.16</simplewerserver.version>
     </properties>
     <developers>
         <developer>
@@ -27,7 +27,7 @@
         <connection>scm:git:git@github.com:hibegin/simplewebserver-cli.git</connection>
         <developerConnection>scm:git:git@github.com:hibegin/simplewebserver-cli.git</developerConnection>
         <url>git@github.com:hibegin/simplewebserver-cli.git</url>
-        <tag>simplewebserver-cli-0.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
     <issueManagement>
         <system>Github Issue</system>
@@ -99,16 +99,23 @@
                 </executions>
             </plugin>
             <plugin>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.7</version>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.5</version>
                 <executions>
                     <execution>
-                        <id>deploy-executable</id>
                         <goals>
-                            <goal>deploy-file</goal>
+                            <goal>attached</goal>
                         </goals>
+                        <phase>package</phase>
                         <configuration>
-                            <file>target/simplewebserver-cli.jar</file>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                            <archive>
+                                <manifest>
+                                    <mainClass>com.hibegin.http.file.server.FileHttpServerApplication</mainClass>
+                                </manifest>
+                            </archive>
                         </configuration>
                     </execution>
                 </executions>
@@ -134,28 +141,6 @@
                     <releaseProfiles>release</releaseProfiles>
                     <goals>deploy nexus-staging:release</goals>
                 </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.5.5</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>attached</goal>
-                        </goals>
-                        <phase>package</phase>
-                        <configuration>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <archive>
-                                <manifest>
-                                    <mainClass>com.hibegin.http.file.server.FileHttpServerApplication</mainClass>
-                                </manifest>
-                            </archive>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

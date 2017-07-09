@@ -3,6 +3,7 @@
 *.pid
 *.jar
 *.iml
+zip/*.zip
 **/target
 **/temp/**
 /build/

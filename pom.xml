@@ -113,7 +113,7 @@
     </distributionManagement>
 
     <modules>
-        <module>cli</module>
+        <module>simplewebserver.cli</module>
         <module>jlink</module>
     </modules>
 </project>

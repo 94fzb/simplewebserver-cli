@@ -16,7 +16,17 @@
             <groupId>com.hibegin</groupId>
             <artifactId>simplewebserver.cli</artifactId>
             <version>${project.version}</version>
-            <type>jmod</type>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jlink-plugin</artifactId>
+                <version>3.0.0-alpha-2-SNAPSHOT</version>
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

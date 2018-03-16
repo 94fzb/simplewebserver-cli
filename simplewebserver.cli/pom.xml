@@ -10,6 +10,14 @@
     </parent>
 
     <artifactId>simplewebserver.cli</artifactId>
-    <packaging>jmod</packaging>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.hibegin</groupId>
+            <artifactId>simplewebserver</artifactId>
+            <version>0.2.19-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -3,7 +3,7 @@
 *.pid
 *.jar
 *.iml
-zip/*.zip
+zip/*
 **/target
 **/temp/**
 /build/
@@ -16,4 +16,3 @@ pom.xml.releaseBackup
 release.properties
 pom.xml.next
 rebel.xml
-src/main/resources/ServerInfo.properties

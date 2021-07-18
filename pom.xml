@@ -10,14 +10,14 @@
     <url>http://github.com/hibegin/simplewebserver-cli</url>
 
     <properties>
-        <maven.compiler.target>1.9</maven.compiler.target>
-        <maven.compiler.source>1.9</maven.compiler.source>
-        <java.version>1.9</java.version>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <java.version>11</java.version>
     </properties>
     <developers>
         <developer>
             <email>xchun90@163.com</email>
-            <url>http://blog.94fzb.com</url>
+            <url>https://xiaochun.zrlog.com</url>
         </developer>
     </developers>
     <scm>
@@ -42,17 +42,12 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.7.0</version>
+                    <version>3.8.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>3.0.2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-toolchains-plugin</artifactId>
-                    <version>1.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -60,25 +55,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-toolchains-plugin</artifactId>
-                <configuration>
-                    <toolchains>
-                        <jdk>
-                            <version>1.9</version>
-                            <vendor>oracle</vendor>
-                        </jdk>
-                    </toolchains>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>toolchain</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
@@ -111,4 +87,14 @@
         <module>simplewebserver.cli</module>
         <module>jlink</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.hibegin</groupId>
+                <artifactId>simplewebserver.cli</artifactId>
+                <version>0.0.6-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

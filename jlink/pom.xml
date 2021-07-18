@@ -8,6 +8,7 @@
         <artifactId>simplewebserver-cli-parent</artifactId>
         <version>0.0.6-SNAPSHOT</version>
     </parent>
+
     <artifactId>jlink</artifactId>
     <packaging>jlink</packaging>
 
@@ -15,7 +16,6 @@
         <dependency>
             <groupId>com.hibegin</groupId>
             <artifactId>simplewebserver.cli</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -24,7 +24,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jlink-plugin</artifactId>
-                <version>3.0.0-alpha-2-SNAPSHOT</version>
+                <version>3.1.0</version>
                 <extensions>true</extensions>
             </plugin>
         </plugins>

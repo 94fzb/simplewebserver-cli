@@ -18,12 +18,13 @@ public class FileInterceptor implements Interceptor {
 
     @Override
     public boolean doInterceptor(HttpRequest httpRequest, HttpResponse httpResponse) {
-        String basePath = new File(FileHttpServerApplication.cmd.getOptionValue("path", PathUtil.getRootPath())).getAbsolutePath();
+        String basePath = new File(Objects.requireNonNullElse(FileHttpServerApplication.fileServerConfig.getOptions().getPath(), PathUtil.getRootPath())).getAbsolutePath();
         File file = new File(basePath + "/" + httpRequest.getUri());
         httpResponse.addHeader("Connection", "close");
         if (file.exists()) {
             if (httpRequest.getUri().endsWith("/") || file.isDirectory()) {
-                if ("0".equals(FileHttpServerApplication.cmd.getOptionValue("autoIndex", "0"))) {
+                int autoIndex = Objects.requireNonNullElse(FileHttpServerApplication.fileServerConfig.getOptions().getAutoIndex(), 0);
+                if (autoIndex == 0) {
                     try {
                         httpResponse.renderHtmlStr(buildHtmlStr(file, basePath));
                     } catch (UnsupportedEncodingException e) {

@@ -11,12 +11,18 @@
 
     <artifactId>simplewebserver.cli</artifactId>
     <packaging>jar</packaging>
+    <version>0.0.6-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>com.hibegin</groupId>
             <artifactId>simplewebserver</artifactId>
-            <version>0.2.19-SNAPSHOT</version>
+            <version>0.2.71</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.cril.cli</groupId>
+            <artifactId>fr.cril.cli</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 

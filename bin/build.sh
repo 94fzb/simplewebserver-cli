@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+rm -rf zip
 mkdir zip
-mvn clean package
+./mvnw clean package
 cp bin/simplewebserver.sh simplewebserver.sh
 chmod a+x simplewebserver.sh
 zip -r jlink/target/*.zip simplewebserver.sh

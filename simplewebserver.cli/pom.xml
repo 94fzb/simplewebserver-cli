@@ -10,7 +10,6 @@
     </parent>
 
     <artifactId>simplewebserver.cli</artifactId>
-    <packaging>jar</packaging>
     <version>0.0.6-SNAPSHOT</version>
 
     <dependencies>

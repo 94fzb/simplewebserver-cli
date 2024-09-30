@@ -1,1 +1,0 @@
-bin\java -Dfile.encoding=UTF-8 com.hibegin.http.file.server.FileHttpServerApplication  %*

@@ -1,11 +1,53 @@
 # SimpleWebServer-cli
 
-## Usage
+### dev package
 
-`java -jar simplewebserver-cli-0.0.5-jar-with-dependencies.jar -p 6080 -f /var/www`
+```shell
+export JAVA_HOME=${HOME}/dev/graalvm-jdk-latest
+export PATH=${JAVA_HOME}/bin:$PATH
+```
 
-## Download (Maven Repository)
+### Download
 
-- http://central.maven.org/maven2/com/hibegin/simplewebserver-cli/0.0.5/simplewebserver-cli-0.0.5-jar-with-dependencies.jar
+- Linux
+  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-x86_64)
+- Mac
+  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-x86_64)
+  - [arm64](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-arm64)
+- Windows
+  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Windows-x86_64.exe)
 
-- https://oss.sonatype.org/content/repositories/releases/com/hibegin/simplewebserver-cli/0.0.5/simplewebserver-cli-0.0.5-jar-with-dependencies.jar
+
+#### Linux
+
+```
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-x86_64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+```
+
+#### MacOS x86
+
+```
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-x86_64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+```
+
+#### MacOS arm64
+
+```
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-arm64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+```
+
+
+### Usage
+
+simplewebserver-cli --help
+
+```
+usage: --help
+ -f,--path <arg>        base path (default current)
+ -h,--help              print help message
+ -i,--autoIndex <arg>   auto index render file folder,
+                        0 is disable, other value enable (default enable)
+ -l,--location <arg>    base uri (default /)
+ -p,--port <arg>        http file server listener port (default port 7080)
+ -v,--version           print simplewebserver-cli version
+```

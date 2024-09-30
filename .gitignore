@@ -17,3 +17,4 @@ release.properties
 pom.xml.next
 rebel.xml
 !.mvn/wrapper/maven-wrapper.jar
+simplewebserver-cli.bgv

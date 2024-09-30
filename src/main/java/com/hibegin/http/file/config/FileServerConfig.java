@@ -28,6 +28,7 @@ public class FileServerConfig extends AbstractServerConfig {
         serverConfig.setApplicationName("simplewebserver-cli");
         serverConfig.setApplicationVersion(FileServerOptions.getVersion());
         serverConfig.setDisablePrintWebServerInfo(true);
+        serverConfig.setDisableSavePidFile(true);
         serverConfig.addLocalFileStaticResourceMapper(options.getLocation(), Objects.requireNonNullElse(options.getRootPath(), PathUtil.getRootPath()), options.getAutoIndex());
         serverConfig.setPort(Objects.requireNonNullElse(options.getPort(), FileServerOptions.DEFAULT_PORT));
         if (Objects.equals(options.getAutoIndex(), true)) {

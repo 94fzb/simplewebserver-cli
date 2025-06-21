@@ -15,7 +15,7 @@ public class FileHttpServerApplication {
 
     public static WebServerBuilder webServerBuilder(String[] args) {
         if (args == null || args.length == 0) {
-            return new WebServerBuilder.Builder().config(new com.hibegin.http.file.config.FileServerConfig(new FileServerOptions(FileServerOptions.DEFAULT_PORT, "/", PathUtil.getRootPath(), true))).build();
+            return new WebServerBuilder.Builder().config(new com.hibegin.http.file.config.FileServerConfig(new FileServerOptions(FileServerOptions.DEFAULT_PORT, "/", PathUtil.getRootPath(), true, false))).build();
         }
         FileServerOptions options = FileServerOptions.parseToOptions(args);
         if (Objects.isNull(options)) {

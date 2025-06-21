@@ -48,6 +48,7 @@ public class FileServerConfig extends AbstractServerConfig {
         ResponseConfig responseConfig = new ResponseConfig();
         if (options.getAllowOrigin()) {
             responseConfig.getDefaultHeaders().put("Access-Control-Allow-Origin", "*");
+            responseConfig.getDefaultHeaders().put("Access-Control-Allow-Credentials", "true");
         }
         return responseConfig;
     }

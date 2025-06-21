@@ -33,6 +33,13 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/groups/staging</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>

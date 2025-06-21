@@ -14,10 +14,8 @@ import java.util.logging.Logger;
 
 public class FileServerOptions {
 
-    private static final Logger LOGGER = LoggerUtil.getLogger(FileServerOptions.class);
-
     public static final int DEFAULT_PORT = 7080;
-
+    private static final Logger LOGGER = LoggerUtil.getLogger(FileServerOptions.class);
     public static String artifactId = "simplewebserver-cli";
 
     private final Integer port;
@@ -28,27 +26,15 @@ public class FileServerOptions {
 
     private final Boolean autoIndex;
 
-    public FileServerOptions(Integer port, String location, String rootPath, Boolean autoIndex) {
+    private final Boolean allowOrigin;
+
+
+    public FileServerOptions(Integer port, String location, String rootPath, Boolean autoIndex, Boolean allowOrigin) {
         this.port = port;
         this.location = location;
         this.rootPath = rootPath;
         this.autoIndex = autoIndex;
-    }
-
-    public Boolean getAutoIndex() {
-        return autoIndex;
-    }
-
-    public String getRootPath() {
-        return rootPath;
-    }
-
-    public Integer getPort() {
-        return port;
-    }
-
-    public String getLocation() {
-        return location;
+        this.allowOrigin = allowOrigin;
     }
 
     private static Options buildOptions() {
@@ -77,6 +63,10 @@ public class FileServerOptions {
         Option autoIndexOption = new Option("i", "autoIndex", true, "auto index render file folder,\n0 is disable, other value enable (default enable)");
         autoIndexOption.setRequired(false);
         options.addOption(autoIndexOption);
+
+        Option crossOriginOption = new Option("cross", "crossOrigin", true, "crossOrigin request,\n0 is disable, other value enable (default enable)");
+        crossOriginOption.setRequired(false);
+        options.addOption(crossOriginOption);
         return options;
     }
 
@@ -136,11 +126,35 @@ public class FileServerOptions {
             if (cmd.hasOption("location")) {
                 baseUri = cmd.getOptionValue("location");
             }
-            return new FileServerOptions(port, baseUri, path, enableIndex);
+            boolean enableCross = false;
+            if (cmd.hasOption("crossOrigin")) {
+                enableCross = !Objects.equals(cmd.getOptionValue("crossOrigin"), "0");
+            }
+            return new FileServerOptions(port, baseUri, path, enableIndex, enableCross);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             formatter.printHelp("-help", options);
             return null;
         }
+    }
+
+    public Boolean getAutoIndex() {
+        return autoIndex;
+    }
+
+    public String getRootPath() {
+        return rootPath;
+    }
+
+    public Integer getPort() {
+        return port;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public Boolean getAllowOrigin() {
+        return allowOrigin;
     }
 }

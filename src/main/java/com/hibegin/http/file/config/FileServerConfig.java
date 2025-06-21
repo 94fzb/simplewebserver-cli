@@ -45,6 +45,10 @@ public class FileServerConfig extends AbstractServerConfig {
 
     @Override
     public ResponseConfig getResponseConfig() {
-        return new ResponseConfig();
+        ResponseConfig responseConfig = new ResponseConfig();
+        if (options.getAllowOrigin()) {
+            responseConfig.getDefaultHeaders().put("Access-Control-Allow-Origin", "*");
+        }
+        return responseConfig;
     }
 }

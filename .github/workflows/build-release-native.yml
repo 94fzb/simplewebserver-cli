@@ -1,17 +1,16 @@
-name: build on Linux amd64 preview native
+name: build release native
 on:
   push:
     branches:
       - main
 jobs:
   build:
-    name: Plugin on ${{ matrix.os }} ${{ matrix.architecture }}
+    name: cli on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
 
     strategy:
       matrix:
-        os: [ ubuntu-22.04 ]
-        architecture: [ amd64 ]
+        os: [ ubuntu-22.04,ubuntu-24.04-arm,macos-13,macos-14,windows-2022]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -26,5 +25,5 @@ jobs:
 
       - name: Build and upload binary
         run: |
-          bash -e bin/package-native-github.sh /tmp/download/simplewebserver.cli
-          bash -e bin/upload-bin.sh ${{ secrets.SECRET_ID }} ${{ secrets.SECRET_KEY }} ${{ secrets.BUCKET }} /tmp/download simplewebserver.cli
+          bash -e bin/package-native-github.sh /tmp/download/sws-cli
+          bash -e bin/upload-bin.sh ${{ secrets.SECRET_ID }} ${{ secrets.SECRET_KEY }} ${{ secrets.BUCKET }} /tmp/download sws-cli ${{ secrets.HOST }}

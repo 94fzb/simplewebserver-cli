@@ -118,6 +118,7 @@
                                 <arg>
                                     -Ob
                                     -H:+UnlockExperimentalVMOptions
+                                    --no-fallback
                                     --allow-incomplete-classpath
                                     -march=compatibility
                                     -H:DashboardDump=${imageName}

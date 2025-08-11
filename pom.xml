@@ -119,6 +119,7 @@
                                     -Ob
                                     -H:+UnlockExperimentalVMOptions
                                     --no-fallback
+                                    --initialize-at-run-time=javax.net.ssl.*,sun.security.ssl.*
                                     --allow-incomplete-classpath
                                     -march=compatibility
                                     -H:DashboardDump=${imageName}

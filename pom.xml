@@ -24,7 +24,7 @@
         <dependency>
             <groupId>com.hibegin</groupId>
             <artifactId>simplewebserver</artifactId>
-            <version>4.0.61</version>
+            <version>4.0.105</version>
         </dependency>
         <dependency>
             <groupId>commons-cli</groupId>
@@ -119,7 +119,9 @@
                                     -Ob
                                     -H:+UnlockExperimentalVMOptions
                                     --no-fallback
-                                    --initialize-at-run-time=javax.net.ssl.*,sun.security.ssl.*,com.hibegin.http.server.SimpleHttpsWebServer,com.hibegin.common.io.handler.SslReadWriteSelectorHandler,com.hibegin.common.io.handler.SslChannelFactory,com.hibegin.common.io.handler.ReadWriteSelectorHandlerUtils,com.hibegin.http.server.handler.HttpDecodeRunnable
+                                    -H:+BuildReport
+                                    --strict-image-heap
+                                    --enable-sbom
                                     --allow-incomplete-classpath
                                     -march=compatibility
                                     -H:DashboardDump=${imageName}

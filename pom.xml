@@ -119,7 +119,7 @@
                                     -Ob
                                     -H:+UnlockExperimentalVMOptions
                                     --no-fallback
-                                    --initialize-at-run-time=javax.net.ssl.*,sun.security.ssl.*,com.hibegin.http.server.SimpleHttpsWebServer,com.hibegin.common.io.handler.SslReadWriteSelectorHandler,com.hibegin.common.io.handler.SslChannelFactory,com.hibegin.common.io.handler.SslChannelFactory
+                                    --initialize-at-run-time=javax.net.ssl.*,sun.security.ssl.*,com.hibegin.http.server.SimpleHttpsWebServer,com.hibegin.common.io.handler.SslReadWriteSelectorHandler,com.hibegin.common.io.handler.SslChannelFactory,com.hibegin.common.io.handler.ReadWriteSelectorHandlerUtils
                                     --allow-incomplete-classpath
                                     -march=compatibility
                                     -H:DashboardDump=${imageName}

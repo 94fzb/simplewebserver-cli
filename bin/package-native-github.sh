@@ -19,6 +19,7 @@ then
   choco install upx
   mv ${sourceFile} ${targetFile}
   upx --best ${targetFile}
+  exit 0;
 fi
 if [[ "$(uname -s)" == "Linux" ]];
 then

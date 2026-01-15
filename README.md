@@ -10,11 +10,11 @@ export PATH=${JAVA_HOME}/bin:$PATH
 ### Download
 
 - Linux
-  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-x86_64)
-  - [arm64](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-aarch64)
+  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-amd64.bin)
+  - [arm64](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-arm64.bin)
 - Mac
-  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-x86_64)
-  - [arm64](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-arm64)
+  - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-x86_64.bin)
+  - [arm64](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-arm64.bin)
 - Windows
   - [x86](https://dl.hibegin.com/sws-cli/simplewebserver-cli-Windows-x86_64.exe)
 
@@ -22,25 +22,25 @@ export PATH=${JAVA_HOME}/bin:$PATH
 #### Linux amd64
 
 ```
-sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-x86_64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-amd64.bin -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
 ```
 
 #### Linux arm64
 
 ```
-sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-aarch64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Linux-arm64.bin -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
 ```
 
 #### MacOS x86
 
 ```
-sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-x86_64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-x86_64.bin -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
 ```
 
 #### MacOS arm64
 
 ```
-sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-arm64 -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
+sudo wget https://dl.hibegin.com/sws-cli/simplewebserver-cli-Darwin-arm64.bin -O /usr/local/bin/simplewebserver-cli && sudo chmod a+x /usr/local/bin/simplewebserver-cli  
 ```
 
 
